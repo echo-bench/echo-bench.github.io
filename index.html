@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="icon" type="image/png" href="assets/icon.png" />
+  <title>ECHO</title>
+  <meta name="description" content="TODO">
+  <meta name="keywords" content="unified model, image generation benchmark, native multimodal model">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ECHO">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZDTLD0T399"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-ZDTLD0T399');
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <!-- popper used for tooltips -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <!-- bootstrap styling used for carousel -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/custom.css">
+
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/interactions.js"></script>
+
+  <style>
+    body {
+        font-family: 'DM Sans', sans-serif;
+    }
+  </style>
+
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body" style="padding: 3rem 1.5rem 0.5rem 1.5rem;">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title publication-title serif-header">
+			  Constantly Improving Image Models Need<br> 
+			  Constantly Improving Benchmarks
+		  </h1>
+          <div class="is-size-6 publication-authors">
+            <span class="author-block">
+              <a href="https://jiaxin.ge" target="_blank">Jiaxin Ge</a><sup>1*</sup>
+            </span>
+            <span class="author-block">
+              <a href="https://people.eecs.berkeley.edu/~graceluo" target="_blank">Grace Luo</a><sup>1*</sup>
+            </span>
+            <br>
+            <span class="author-block">
+              Heekyung Lee<sup>1</sup>
+            </span>
+            <span class="author-block">
+              Nishant Malpani<sup>1</sup>
+            </span>
+            <span class="author-block">
+              Long Lian<sup>1</sup>
+            </span>
+            <span class="author-block">
+              XuDong Wang<sup>1</sup>
+            </span>
+            <br>
+            <span class="author-block">
+              <a href="https://holynski.org/" target="_blank">Aleksander Holynski</a><sup>1</sup>
+            </span> 
+            <span class="author-block">
+              <a href="http://people.eecs.berkeley.edu/~trevor" target="_blank">Trevor Darrell</a><sup>1</sup>
+            </span>  
+            <span class="author-block">
+              <a href="https://www.sewonmin.com" target="_blank">Sewon Min</a><sup>1</sup>
+            </span>  
+            <span class="author-block">
+              <a href="https://dchan.cc" target="_blank">David M. Chan</a><sup>1</sup>
+            </span>          
+          </div>
+          <br>
+          <div class="is-size-6 publication-authors">
+            <span class="author-block"><sup>1</sup>UC Berkeley</span>
+          </div>
+          <br>
+          <div>
+            <span class="is-size-7 author-block"><sup>*</sup>Equal contribution</span>
+          </div>
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="" target="_blank" class="external-link button is-normal is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="" target="_blank" class="external-link button is-normal is-dark" style="box-shadow: 3px 3px 0px black;">
+                  <span class="icon">
+                      <i class="fa fa-database"></i>
+                  </span>
+                  <span>Dataset</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="" target="_blank" class="external-link button is-normal is-dark" style="box-shadow: 3px 3px 0px black;">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Abstract -->
+<section class="section" style="padding-top: 1rem;">
+  <div class="container is-max-desktop">
+    <div class="is-centered has-text-centered">
+      <p>
+        <b>TL;DR:</b> TODO
+      </p>
+      <br>
+      <div class="max-width-content">
+        <video id="teaser" muted playsinline onclick="playVideo('teaser')" style="max-width: min(70vw, 500px);">
+          <source src="assets/teaser.m4v" type="video/mp4">
+        </video>
+        <br>
+        <button class="button is-white btn-teaser" onclick="playVideo('teaser')">
+          <img style="margin-right: 5px;" src="assets/hand.svg" />
+          Click to animate figure
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Abstract -->
+
+<!-- Method -->
+<hr>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4 serif-header">Abstract</h2>
+        <div class="content has-text-left">
+          <p>
+            Recent advances in image generation, often driven by proprietary systems like GPT-4o Image Gen, regularly introduce new capabilities that reshape how users interact with these models. Existing benchmarks often lag behind and fail to capture these emerging use cases, leaving a gap between community perceptions of progress and formal evaluation. To address this, we present ECHO, a framework for constructing benchmarks directly from real-world evidence of model use: social media posts that showcase novel prompts and qualitative user judgments. Applying this framework to GPT-4o Image Gen, we construct a dataset of over 35,000 prompts curated from such posts. Our analysis shows that ECHO (1) discovers creative and complex tasks absent from existing benchmarks, such as re-rendering product labels across languages or generating receipts with specified totals, (2) more clearly distinguishes state-of-the-art models from alternatives, and (3) surfaces community feedback that we use to inform the design of metrics for model quality (e.g., measuring observed shifts in color, identity, and structure).
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Method -->
+<hr>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4 serif-header">TODO</h2>
+        <br>
+        <div class="max-width-content">
+          <img src="assets/approach.jpg" />
+        </div>
+        <br>
+        <div class="content has-text-left">
+          <p>
+            TODO
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Method -->
+
+<!-- Acknowledgements and Citation -->
+<hr>
+<section class="section">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-4 serif-header">Acknowledgements</h2>
+    <p>
+      TODO
+    </p>
+    <h2 class="title is-4 serif-header">BibTeX</h2>
+    <pre><code>
+    @inproceedings{ge2025echo,
+      title={Constantly Improving Image Models Need Constantly Improving Benchmarks},
+      author={Jiaxin Ge, Grace Luo, Heekyung Lee, Nishant Malpani, Long Lian, XuDong Wang, Aleksander Holynski, Trevor Darrell, Sewon Min, David M. Chan},
+      booktitle={arXiv},
+      year={2025}
+    }
+    </code></pre>
+  </div>
+</section>
+<!-- Acknowledgements and Citation -->
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            The website template is based on the
+            <a href="https://nerfies.github.io">Nerfies</a>
+            and <a href="https://dual-process.github.io">Dual-Process Image Generation</a> project pages.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
