@@ -58,15 +58,15 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <h1 class="title publication-title serif-header">
-			  Constantly Improving Image Models Need<br> 
-			  Constantly Improving Benchmarks
-		  </h1>
+    			  Constantly Improving Image Models Need<br> 
+    			  Constantly Improving Benchmarks
+    		  </h1>
           <div class="is-size-6 publication-authors">
             <span class="author-block">
-              <a href="https://jiaxin.ge" target="_blank">Jiaxin Ge</a>
+              <a href="https://jiaxin.ge" target="_blank">Jiaxin Ge</a><sup>*</sup>
             </span>
             <span class="author-block">
-              <a href="https://people.eecs.berkeley.edu/~graceluo" target="_blank">Grace Luo</a>
+              <a href="https://people.eecs.berkeley.edu/~graceluo" target="_blank">Grace Luo</a><sup>*</sup>
             </span>
             <br>
             <span class="author-block">
@@ -93,6 +93,9 @@
             </span>  
             <span class="author-block">
               <a href="https://dchan.cc" target="_blank">David M. Chan</a>
+          </div>
+          <div class="is-size-7 publication-authors" style="margin-top: 20px;">
+            <span class="author-block"><sup>*</sup>Equal Contribution</span>
           </div>
           <br>
           <div class="is-size-6 publication-authors">
@@ -186,7 +189,7 @@
         <br>
         <div class="content has-text-left">
           <p>
-            <span class="echo">ECHO</span> is motivated by several challenges inherent to social media. (1) We start with broad queries followed by relevance filtering, since basic querying presents a volume-relevance tradeoff. (2) We then extract prompts from these posts, making sure to utilize the full post tree, as context can be spread across posts. (3) We then apply multimodal processing, since useful data also exists in non-standard formats. (4) Finally, we reserve the highest quality data for benchmarking, while the rest is used for analysis.
+            The <span class="echo">ECHO</span> framework is motivated by several challenges inherent to social media. (1) We start with broad queries followed by relevance filtering, since basic querying presents a volume-relevance tradeoff. (2) We then extract prompts from these posts, making sure to utilize the full post tree, as context can be spread across posts. (3) We then apply multimodal processing, since useful data also exists in non-standard formats. (4) Finally, we reserve the highest quality data for benchmarking, while the rest is used for analysis.
           </p>
         </div>
       </div>
@@ -203,7 +206,7 @@
       <div class="column is-four-fifths has-text-centered">
         <h2 class="title is-4 serif-header">Dataset Comparison</h2>
         <div id="select-dataset-comparison" class="select-row">
-        <span>
+          <span>
             Split:
             <select onchange="changePlotly('dataset-comparison')">
               <option value="text_to_image">Text-to-Image</option>
@@ -215,12 +218,13 @@
           <img style="width: 20px; margin-top: -3px;" src="assets/info.svg" />
           Select from the dropdown above then hover over the plot
         </div>
-        <br>
-        <iframe id="dataset-comparison-frame" src="assets/dataset_comparison/task_vector/text_to_image.html" width="100%" height="630" style="border:none;">
-        </iframe>
+        <div style="max-width:550px;overflow:auto; margin:0 auto;">
+          <iframe id="dataset-comparison-frame" src="assets/dataset_comparison/task_vector/text_to_image.html" style="border:none; width:100%; height:530px;">
+          </iframe>
+        </div>
         <div class="content has-text-left">
           <p>
-            The prompts in <span class="echo">ECHO</span> are more diverse and better resemble natural user language than prior datasets.
+            The prompts in the <span class="echo">ECHO</span> dataset are more diverse and better resemble natural user language than prior datasets.
             Above, we show a <a href="https://lvdmaaten.github.io/tsne" target="_blank">t-SNE</a> visualization comparing the prompts from <span class="echo">ECHO</span> and prior text-to-image [<a href="https://arxiv.org/abs/2310.11513" target="_blank">1</a>, <a href="https://arxiv.org/abs/2304.05977" target="_blank">2</a>, <a href="https://arxiv.org/abs/2305.01569" target="_blank">3</a>] or image-to-image [<a href="https://step1x-edit.github.io" target="_blank">4</a>, <a href="https://github.com/timothybrooks/instruct-pix2pix" target="_blank">5</a>, <a href="https://osu-nlp-group.github.io/MagicBrush" target="_blank">6</a>] datasets. Hover over each point to see prompts from each dataset!
           </p>
         </div>
@@ -229,6 +233,121 @@
   </div>
 </section>
 <!-- Dataset Comparison -->
+
+<!-- Community Feedback -->
+<hr>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths has-text-centered">
+        <h2 class="title is-4 serif-header">Community Feedback</h2>
+        <div style="padding-top: 5px; color: #C7C7C7;">
+          <img style="width: 20px; margin-top: -3px;" src="assets/info.svg" />
+          Hover over the word cloud to see examples
+        </div>
+        <br>
+        <div style="max-width:420px; overflow:auto; margin:0 auto;">
+          <iframe id="post-volume-frame" src="assets/community_feedback.html" style="border:none; width:100%; height:420px;">
+          </iframe>
+        </div>
+        <br>
+        <div class="content has-text-left">
+          <p>
+            <span class="echo">ECHO</span> not only extracts image generation prompts but also community feedback. We visualize a word cloud of common failures discussed in this feedback, which cover both practical capabilities that affect real-world usability as well as curiosity-driven tests that reveal deeper model limitations. Hover over each word to see example failures!
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Community Feedback -->
+
+<!-- Overall Evaluation -->
+<hr>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths has-text-centered">
+        <h2 class="title is-4 serif-header">Overall Evaluation</h2>
+        <div style="display: flex; justify-content: center;">
+          <img id="" src="" style="max-width: 70%;">
+        </div>
+        <div class="content has-text-left">
+          <p>
+            TODO
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Overall Evaluation -->
+
+<!-- Specialized Metrics -->
+<hr>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths has-text-centered">
+        <h2 class="title is-4 serif-header">Specialized Metrics from Community Feedback</h2>
+        <div id="select-specialized-metrics" class="select-row">
+          <span>
+            Metric:
+            <select onchange="changeImage('specialized-metrics')">
+              <option value="color_shift">Color Shift Magnitude</option>
+              <option value="face_identity">Face Identity Similarity</option>
+              <option value="structure_distance">Structure Distance</option>
+              <option value="text_rendering">Text Rendering Accuracy</option>
+            </select>
+          </span>
+        </div>
+        <div style="padding-top: 5px; color: #C7C7C7;">
+          <img style="width: 20px; margin-top: -3px;" src="assets/info.svg" />
+          Select from the dropdown to see each metric
+        </div>
+        <br>
+        <div style="display: flex; justify-content: center;">
+          <img id="specialized-metrics" src="assets/specialized_metrics/color_shift.jpg" style="max-width: 70%;">
+        </div>
+        <div class="content has-text-left">
+          <p>
+            TODO
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Specialized Metrics -->
+
+<!-- Post Volume -->
+<hr>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths has-text-centered">
+        <h2 class="title is-4 serif-header">Post Volume</h2>
+        <div style="padding-top: 5px; color: #C7C7C7;">
+          <img style="width: 20px; margin-top: -3px;" src="assets/info.svg" />
+          Hover over the plot to see counts
+        </div>
+        <br>
+        <div style="max-width:630px; overflow:auto; margin:0 auto;">
+          <iframe id="post-volume-frame" src="assets/post_volume.html" style="border:none; width:100%; height:330px;">
+          </iframe>
+        </div>
+        <div class="content has-text-left">
+          <p>
+            Since the <span class="echo">ECHO</span> framework operates on a large-scale, it can give insight into activity surrounding a model of interest.
+            We plot the posts captured by our framework, after running all steps including relevance and quality filtering.
+            We mark spikes in activity in yellow, including the day after the 4o Image Gen model release (<a href="https://openai.com/index/introducing-4o-image-generation" target="_blank">Mar 26</a>), the day of the o3 model release (<a href="https://openai.com/index/introducing-o3-and-o4-mini" target="_blank">Apr 16</a>), and the day after the 4o Image Gen API release (<a href="https://openai.com/index/image-generation-api" target="_blank">Apr 24</a>).
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Post Volume -->
 
 <!-- Acknowledgements and Citation -->
 <hr>
