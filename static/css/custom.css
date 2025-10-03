@@ -71,7 +71,11 @@ select:focus {
 }
 
 .serif-header {
-  font-family: 'DM Sans';
+  font-family: 'Comic Neue';
+}
+
+.echo {
+  font-family: 'Comic Neue';
 }
 
 .external-link {
