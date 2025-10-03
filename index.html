@@ -36,7 +36,7 @@
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600;700&display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;600;700&display=swap" rel="stylesheet">
   
@@ -45,7 +45,7 @@
 
   <style>
     body {
-        font-family: 'Inter', sans-serif;
+        font-family: 'Roboto', sans-serif;
     }
   </style>
 
@@ -53,14 +53,18 @@
 <body>
 
 <section class="hero">
-  <div class="hero-body" style="padding: 3rem 1.5rem 0.5rem 1.5rem;">
+  <div class="hero-body" style="padding: 5rem 1.5rem 0.5rem 1.5rem;">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title publication-title serif-header">
-    			  Constantly Improving Image Models Need<br> 
-    			  Constantly Improving Benchmarks
+        <div class="column is-four-fifths">
+          <h1 class="title is-size-2 publication-title section-header" style="padding-bottom: 0.3em;">
+    			  Constantly Improving Image Models<br> 
+    			  Need Constantly Improving Benchmarks
     		  </h1>
+          <div class="is-size-5 publication-authors">
+            The newest in-the-wild image generation benchmark
+          </div>
+          <div class="fullpage-line" style="margin-bottom: 1.5em;"></div>
           <div class="is-size-6 publication-authors">
             <span class="author-block">
               <a href="https://jiaxin.ge" target="_blank">Jiaxin Ge</a><sup>*</sup>
@@ -101,7 +105,8 @@
           <div class="is-size-6 publication-authors">
             <span class="author-block">UC Berkeley</span>
           </div>
-          <div class="column has-text-centered">
+          <br>
+          <div>
             <div class="publication-links">
               <span class="link-block">
                 <a href="" target="_blank" class="external-link button is-normal is-dark">
@@ -128,6 +133,7 @@
                 </a>
               </span>
             </div>
+            <div class="fullpage-line" style="margin-top: 1.5em;"></div>
           </div>
         </div>
       </div>
@@ -135,62 +141,59 @@
   </div>
 </section>
 
-<!-- Abstract -->
-<section class="section" style="padding-top: 1rem;">
-  <div class="container is-max-desktop">
-    <div class="is-centered has-text-centered">
-      <p>
-        <b>TL;DR:</b> The newest in-the-wild image generation benchmark.
-      </p>
-      <br>
-      <div class="max-width-content">
-        <video id="teaser" muted playsinline onclick="playVideo('teaser')" style="max-width: min(70vw, 500px);">
-          <source src="assets/teaser.m4v" type="video/mp4">
-        </video>
-        <br>
-        <button class="button is-white btn-teaser" onclick="playVideo('teaser')">
-          <img style="margin-right: 5px;" src="assets/hand.svg" />
-          Click to animate figure
-        </button>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- Abstract -->
-
-<!-- Method -->
-<hr>
+<!-- Abstract with TOC -->
 <section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-4 serif-header">Abstract</h2>
+  <div class="container" style="max-width: 1280px;">
+    <div class="columns">
+      <div class="column is-one-fifth">
+        <aside class="menu">
+          <b style="padding: 0.75em">Contents</b>
+          <ul class="menu-list" style="margin-top: 0.5em">
+            <li><a href="#method">Extracting Community Hatched Observations</a></li>
+            <li><a href="#dataset-comparison">Dataset Comparison</a></li>
+            <li><a href="#community-feedback">Community Feedback</a></li>
+            <!-- <li><a href="#overall-evaluation">Overall Evaluation</a></li> -->
+            <li><a href="#specialized-metrics">Specialized Metrics</a></li>
+            <li><a href="#post-volume">Post Volume</a></li>
+          </ul>
+        </aside>
+      </div>
+      <div class="column is-four-fifths" style="max-width: 768px;">
+        <h2 id="abstract" class="title is-3 section-header">Abstract</h2>
+        <div class="header-line"></div> 
         <div class="content has-text-left">
           <p>
-            Recent advances in image generation, often driven by proprietary systems like GPT-4o Image Gen, regularly introduce new capabilities that reshape how users interact with these models. Existing benchmarks often lag behind and fail to capture these emerging use cases, leaving a gap between community perceptions of progress and formal evaluation. To address this, we present <span class="echo">ECHO</span>, a framework for constructing benchmarks directly from real-world evidence of model use: social media posts that showcase novel prompts and qualitative user judgments. Applying this framework to GPT-4o Image Gen, we construct a dataset of over 35,000 prompts curated from such posts. Our analysis shows that <span class="echo">ECHO</span> (1) discovers creative and complex tasks absent from existing benchmarks, such as re-rendering product labels across languages or generating receipts with specified totals, (2) more clearly distinguishes state-of-the-art models from alternatives, and (3) surfaces community feedback that we use to inform the design of metrics for model quality (e.g., measuring observed shifts in color, identity, and structure).
+          Recent advances in image generation, often driven by proprietary systems like GPT-4o Image Gen, regularly introduce new capabilities that reshape how users interact with these models. Existing benchmarks often lag behind and fail to capture these emerging use cases, leaving a gap between community perceptions of progress and formal evaluation. To address this, we present <span class="echo">ECHO</span>, a framework for constructing benchmarks directly from real-world evidence of model use: social media posts that showcase novel prompts and qualitative user judgments. Applying this framework to GPT-4o Image Gen, we construct a dataset of over 35,000 prompts curated from such posts. Our analysis shows that <span class="echo">ECHO</span> (1) discovers creative and complex tasks absent from existing benchmarks, such as re-rendering product labels across languages or generating receipts with specified totals, (2) more clearly distinguishes state-of-the-art models from alternatives, and (3) surfaces community feedback that we use to inform the design of metrics for model quality (e.g., measuring observed shifts in color, identity, and structure).
           </p>
         </div>
       </div>
     </div>
   </div>
 </section>
+<a href="#top" class="back-to-top" title="Back to top">
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="12" y1="19" x2="12" y2="7"></line>
+    <polyline points="5 13 12 7 19 13"></polyline>
+    <line x1="5" y1="4" x2="19" y2="4"></line>
+  </svg>
+</a>
+<!-- Abstract with TOC -->
 
 <!-- Method -->
-<hr>
 <section class="section">
   <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
+    <div class="columns is-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-4 serif-header">ECHO: Extracting Community Hatched Observations</h2>
-        <br>
-        <div class="max-width-content">
-          <img src="assets/approach.jpg" />
-        </div>
-        <br>
+        <h2 id="method" class="title is-3 section-header">Extracting Community Hatched Observations</h2>
+        <div class="header-line"></div> 
         <div class="content has-text-left">
           <p>
             The <span class="echo">ECHO</span> framework is motivated by several challenges inherent to social media. (1) We start with broad queries followed by relevance filtering, since basic querying presents a volume-relevance tradeoff. (2) We then extract prompts from these posts, making sure to utilize the full post tree, as context can be spread across posts. (3) We then apply multimodal processing, since useful data also exists in non-standard formats. (4) Finally, we reserve the highest quality data for benchmarking, while the rest is used for analysis.
           </p>
+        </div>
+        <br>
+        <div class="max-width-content">
+          <img src="assets/approach.jpg" />
         </div>
       </div>
     </div>
@@ -199,12 +202,18 @@
 <!-- Method -->
 
 <!-- Dataset Comparison -->
-<hr>
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
-      <div class="column is-four-fifths has-text-centered">
-        <h2 class="title is-4 serif-header">Dataset Comparison</h2>
+      <div class="column is-four-fifths">
+        <h2 id="dataset-comparison" class="title is-3 section-header">Dataset Comparison</h2>
+        <div class="header-line"></div> 
+        <div class="content has-text-left">
+          <p>
+            The prompts in the <span class="echo">ECHO</span> dataset are more diverse and better resemble natural user language than prior datasets.
+            Above, we show a <a href="https://lvdmaaten.github.io/tsne" target="_blank">t-SNE</a> visualization comparing the prompts from <span class="echo">ECHO</span> and prior text-to-image [<a href="https://arxiv.org/abs/2310.11513" target="_blank">1</a>, <a href="https://arxiv.org/abs/2304.05977" target="_blank">2</a>, <a href="https://arxiv.org/abs/2305.01569" target="_blank">3</a>] or image-to-image [<a href="https://step1x-edit.github.io" target="_blank">4</a>, <a href="https://github.com/timothybrooks/instruct-pix2pix" target="_blank">5</a>, <a href="https://osu-nlp-group.github.io/MagicBrush" target="_blank">6</a>] datasets. Hover over each point to see prompts from each dataset!
+          </p>
+        </div>
         <div id="select-dataset-comparison" class="select-row">
           <span>
             Split:
@@ -222,12 +231,6 @@
           <iframe id="dataset-comparison-frame" src="assets/dataset_comparison/task_vector/text_to_image.html" style="border:none; width:100%; height:530px;">
           </iframe>
         </div>
-        <div class="content has-text-left">
-          <p>
-            The prompts in the <span class="echo">ECHO</span> dataset are more diverse and better resemble natural user language than prior datasets.
-            Above, we show a <a href="https://lvdmaaten.github.io/tsne" target="_blank">t-SNE</a> visualization comparing the prompts from <span class="echo">ECHO</span> and prior text-to-image [<a href="https://arxiv.org/abs/2310.11513" target="_blank">1</a>, <a href="https://arxiv.org/abs/2304.05977" target="_blank">2</a>, <a href="https://arxiv.org/abs/2305.01569" target="_blank">3</a>] or image-to-image [<a href="https://step1x-edit.github.io" target="_blank">4</a>, <a href="https://github.com/timothybrooks/instruct-pix2pix" target="_blank">5</a>, <a href="https://osu-nlp-group.github.io/MagicBrush" target="_blank">6</a>] datasets. Hover over each point to see prompts from each dataset!
-          </p>
-        </div>
       </div>
     </div>
   </div>
@@ -235,12 +238,17 @@
 <!-- Dataset Comparison -->
 
 <!-- Community Feedback -->
-<hr>
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
-      <div class="column is-four-fifths has-text-centered">
-        <h2 class="title is-4 serif-header">Community Feedback</h2>
+      <div class="column is-four-fifths">
+        <h2 id="community-feedback" class="title is-3 section-header">Community Feedback</h2>
+        <div class="header-line"></div> 
+        <div class="content has-text-left">
+          <p>
+            <span class="echo">ECHO</span> not only extracts image generation prompts but also community feedback. We visualize a word cloud of common failures discussed in this feedback, which cover both practical capabilities that affect real-world usability as well as curiosity-driven tests that reveal deeper model limitations. Hover over each word to see example failures!
+          </p>
+        </div>
         <div style="padding-top: 5px; color: #C7C7C7;">
           <img style="width: 20px; margin-top: -3px;" src="assets/info.svg" />
           Hover over the word cloud to see examples
@@ -250,12 +258,6 @@
           <iframe id="post-volume-frame" src="assets/community_feedback.html" style="border:none; width:100%; height:420px;">
           </iframe>
         </div>
-        <br>
-        <div class="content has-text-left">
-          <p>
-            <span class="echo">ECHO</span> not only extracts image generation prompts but also community feedback. We visualize a word cloud of common failures discussed in this feedback, which cover both practical capabilities that affect real-world usability as well as curiosity-driven tests that reveal deeper model limitations. Hover over each word to see example failures!
-          </p>
-        </div>
       </div>
     </div>
   </div>
@@ -263,12 +265,12 @@
 <!-- Community Feedback -->
 
 <!-- Overall Evaluation -->
-<hr>
-<section class="section">
+<!-- <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
-      <div class="column is-four-fifths has-text-centered">
-        <h2 class="title is-4 serif-header">Overall Evaluation</h2>
+      <div class="column is-four-fifths">
+        <h2 id="overall-evaluation" class="title is-3 section-header">Overall Evaluation</h2>
+        <div class="header-line"></div> 
         <div style="display: flex; justify-content: center;">
           <img id="" src="" style="max-width: 70%;">
         </div>
@@ -280,16 +282,16 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!-- Overall Evaluation -->
 
 <!-- Specialized Metrics -->
-<hr>
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
-      <div class="column is-four-fifths has-text-centered">
-        <h2 class="title is-4 serif-header">Specialized Metrics from Community Feedback</h2>
+      <div class="column is-four-fifths">
+        <h2 id="specialized-metrics" class="title is-3 section-header">Specialized Metrics from Community Feedback</h2>
+        <div class="header-line"></div> 
         <div id="select-specialized-metrics" class="select-row">
           <span>
             Metric:
@@ -311,7 +313,6 @@
         </div>
         <div class="content has-text-left">
           <p>
-            TODO
           </p>
         </div>
       </div>
@@ -321,12 +322,19 @@
 <!-- Specialized Metrics -->
 
 <!-- Post Volume -->
-<hr>
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
-      <div class="column is-four-fifths has-text-centered">
-        <h2 class="title is-4 serif-header">Post Volume</h2>
+      <div class="column is-four-fifths">
+        <h2 id="post-volume" class="title is-3 section-header">Post Volume</h2>
+        <div class="header-line"></div> 
+        <div class="content has-text-left">
+          <p>
+            Since the <span class="echo">ECHO</span> framework operates on a large-scale, it can give insight into activity surrounding a model of interest.
+            We plot the posts captured by our framework, after running all steps including relevance and quality filtering.
+            We mark spikes in activity in yellow, including the day after the 4o Image Gen model release (<a href="https://openai.com/index/introducing-4o-image-generation" target="_blank">Mar 26</a>), the day of the o3 model release (<a href="https://openai.com/index/introducing-o3-and-o4-mini" target="_blank">Apr 16</a>), and the day after the 4o Image Gen API release (<a href="https://openai.com/index/image-generation-api" target="_blank">Apr 24</a>).
+          </p>
+        </div>
         <div style="padding-top: 5px; color: #C7C7C7;">
           <img style="width: 20px; margin-top: -3px;" src="assets/info.svg" />
           Hover over the plot to see counts
@@ -336,13 +344,6 @@
           <iframe id="post-volume-frame" src="assets/post_volume.html" style="border:none; width:100%; height:330px;">
           </iframe>
         </div>
-        <div class="content has-text-left">
-          <p>
-            Since the <span class="echo">ECHO</span> framework operates on a large-scale, it can give insight into activity surrounding a model of interest.
-            We plot the posts captured by our framework, after running all steps including relevance and quality filtering.
-            We mark spikes in activity in yellow, including the day after the 4o Image Gen model release (<a href="https://openai.com/index/introducing-4o-image-generation" target="_blank">Mar 26</a>), the day of the o3 model release (<a href="https://openai.com/index/introducing-o3-and-o4-mini" target="_blank">Apr 16</a>), and the day after the 4o Image Gen API release (<a href="https://openai.com/index/image-generation-api" target="_blank">Apr 24</a>).
-          </p>
-        </div>
       </div>
     </div>
   </div>
@@ -350,23 +351,26 @@
 <!-- Post Volume -->
 
 <!-- Acknowledgements and Citation -->
-<hr>
 <section class="section">
-  <div class="container is-max-desktop content">
-    <h2 class="title is-4 serif-header">Acknowledgements</h2>
-    <p>
-      We thank Stephanie Fu, Michelle Li, and Alexander Pan for their helpful feedback.
-      We also thank the folks at Stochastic Labs for previewing early prototypes of this work. Finally, we extend a special thank you to Lisa Dunlap for entertaining many extensive discussions on evaluations.
-    </p>
-    <h2 class="title is-4 serif-header">BibTeX</h2>
-    <pre><code>
-    @article{ge2025echo,
-      title={Constantly Improving Image Models Need Constantly Improving Benchmarks},
-      author={Jiaxin Ge, Grace Luo, Heekyung Lee, Nishant Malpani, Long Lian, XuDong Wang, Aleksander Holynski, Trevor Darrell, Sewon Min, David M. Chan},
-      journal={arXiv},
-      year={2025}
-    }
-    </code></pre>
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4 section-header plain-header">Acknowledgements</h2>
+        <p>
+          We thank Stephanie Fu, Michelle Li, and Alexander Pan for their helpful feedback.
+          We also thank the folks at Stochastic Labs for previewing early prototypes of this work. Finally, we extend a special thank you to Lisa Dunlap for entertaining many extensive discussions on evaluations.
+        </p>
+        <br>
+        <h2 class="title is-4 section-header plain-header">BibTeX</h2>
+<pre><code>@article{ge2025echo,
+  title={Constantly Improving Image Models Need Constantly Improving Benchmarks},
+  author={Jiaxin Ge, Grace Luo, Heekyung Lee, Nishant Malpani, Long Lian, XuDong Wang, Aleksander Holynski, Trevor Darrell, Sewon Min, David M. Chan},
+  journal={arXiv},
+  year={2025}
+}
+</code></pre>
+      </div>
+    </div>
   </div>
 </section>
 <!-- Acknowledgements and Citation -->
@@ -377,9 +381,7 @@
       <div class="column is-8">
         <div class="content">
           <p>
-            The website template is based on the
-            <a href="https://nerfies.github.io">Nerfies</a>
-            and <a href="https://dual-process.github.io">Dual-Process Image Generation</a> project pages.
+            The website is modified from the <a href="https://dual-process.github.io">Dual-Process Image Generation</a> project page, which is based on <a href="https://nerfies.github.io">Nerfies</a>. We adapted it taking inspiration from <a href="https://flowreinforce.github.io">FPO</a>, which is spiritually similar to the <a href="https://distill.pub/guide"> Distill Template</a>. This website was designed by <a href="https://graceluo.net">Grace Luo</a> with feedback from the ECHO team. Feel free to use the <a href="">source code</a> and cite us!
           </p>
         </div>
       </div>

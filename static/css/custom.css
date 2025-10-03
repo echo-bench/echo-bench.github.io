@@ -1,15 +1,26 @@
 html {
   font-size: 12pt;
+  scroll-behavior: smooth;
 }
 
 body {
   color: black;
 }
 
-hr {
+.fullpage-line {
+  margin: 1em 0;
+  height: 1px;
   background-color: #edededff;
-  margin: auto;
-  width: 90vw;
+  border: none;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.header-line {
+  margin: 1em 0;
+  border-top: 1px solid #edededff;
 }
 
 .max-width-content {
@@ -70,12 +81,18 @@ select:focus {
   box-shadow: none;
 }
 
-.serif-header {
-  font-family: 'DM Sans';
+.section-header {
+  font-family: 'Roboto', sans-serif;
+  color: black !important;
+  margin-bottom: 0 !important;
+}
+
+.plain-header {
+  margin-bottom: 0.5em !important;
 }
 
 .echo {
-  font-family: 'Comic Neue';
+  font-family: 'Comic Neue', sans-serif;
 }
 
 .external-link {
@@ -112,4 +129,16 @@ select:focus {
 
 .carousel-description {
   margin-top: 20px;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+.back-to-top:hover {
+  opacity: 1;
 }
