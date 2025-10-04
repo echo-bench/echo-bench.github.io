@@ -149,7 +149,7 @@
         <aside class="menu">
           <b style="padding: 0.75em">Contents</b>
           <ul class="menu-list" style="margin-top: 0.5em">
-            <li><a href="#method">Extracting Community Hatched Observations</a></li>
+            <li><a href="#method">Method</a></li>
             <li><a href="#dataset-comparison">Dataset Comparison</a></li>
             <li><a href="#community-feedback">Community Feedback</a></li>
             <!-- <li><a href="#overall-evaluation">Overall Evaluation</a></li> -->
@@ -184,7 +184,25 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-four-fifths">
-        <h2 id="method" class="title is-3 section-header">Extracting Community Hatched Observations</h2>
+        <h2 id="method" class="title is-3 section-header">Gallery</h2>
+        <div class="header-line"></div> 
+        <div class="content has-text-left">
+          <p>
+            TODO
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Method -->
+
+<!-- Method -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 id="method" class="title is-3 section-header">Method</h2>
         <div class="header-line"></div> 
         <div class="content has-text-left">
           <p>
@@ -192,8 +210,17 @@
           </p>
         </div>
         <br>
-        <div class="max-width-content">
-          <img src="assets/approach.jpg" />
+        <div class="columns">
+          <div class="column">
+            <figure class="image">
+              <img src="assets/approach_1.jpg" />
+            </figure>
+          </div>
+          <div class="column">
+            <figure class="image">
+              <img src="assets/approach_2.jpg" />
+            </figure>
+          </div>
         </div>
       </div>
     </div>
@@ -211,7 +238,7 @@
         <div class="content has-text-left">
           <p>
             The prompts in the <span class="echo">ECHO</span> dataset are more diverse and better resemble natural user language than prior datasets.
-            Above, we show a <a href="https://lvdmaaten.github.io/tsne" target="_blank">t-SNE</a> visualization comparing the prompts from <span class="echo">ECHO</span> and prior text-to-image [<a href="https://arxiv.org/abs/2310.11513" target="_blank">1</a>, <a href="https://arxiv.org/abs/2304.05977" target="_blank">2</a>, <a href="https://arxiv.org/abs/2305.01569" target="_blank">3</a>] or image-to-image [<a href="https://step1x-edit.github.io" target="_blank">4</a>, <a href="https://github.com/timothybrooks/instruct-pix2pix" target="_blank">5</a>, <a href="https://osu-nlp-group.github.io/MagicBrush" target="_blank">6</a>] datasets. Hover over each point to see prompts from each dataset!
+            We show a <a href="https://lvdmaaten.github.io/tsne" target="_blank">t-SNE</a> visualization comparing the prompts from <span class="echo">ECHO</span> and prior text-to-image [<a href="https://arxiv.org/abs/2310.11513" target="_blank">1</a>, <a href="https://arxiv.org/abs/2304.05977" target="_blank">2</a>, <a href="https://arxiv.org/abs/2305.01569" target="_blank">3</a>] or image-to-image [<a href="https://step1x-edit.github.io" target="_blank">4</a>, <a href="https://github.com/timothybrooks/instruct-pix2pix" target="_blank">5</a>, <a href="https://osu-nlp-group.github.io/MagicBrush" target="_blank">6</a>] datasets. Hover over each point to see prompts from each dataset!
           </p>
         </div>
         <div id="select-dataset-comparison" class="select-row">
@@ -227,8 +254,8 @@
           <img style="width: 20px; margin-top: -3px;" src="assets/info.svg" />
           Select from the dropdown above then hover over the plot
         </div>
-        <div style="max-width:550px;overflow:auto; margin:0 auto;">
-          <iframe id="dataset-comparison-frame" src="assets/dataset_comparison/task_vector/text_to_image.html" style="border:none; width:100%; height:530px;">
+        <div style="max-width:430px;overflow:auto; margin:0 auto;">
+          <iframe id="dataset-comparison-frame" src="assets/dataset_comparison/small/text_to_image.html" style="border:none; width:100%; height:430px;">
           </iframe>
         </div>
       </div>
@@ -246,16 +273,19 @@
         <div class="header-line"></div> 
         <div class="content has-text-left">
           <p>
-            <span class="echo">ECHO</span> not only extracts image generation prompts but also community feedback. We visualize a word cloud of common failures discussed in this feedback, which cover both practical capabilities that affect real-world usability as well as curiosity-driven tests that reveal deeper model limitations. Hover over each word to see example failures!
+            <span class="echo">ECHO</span> not only extracts image generation prompts but also community feedback. We use an LLM to annotate
+            whether each comment discusses a success or failure, and extract keywords. We visualize the keywords of all failures in the following word cloud.
+            Select from the dropdown to explore some of the suggested keywords,
+            which highlight the attributes that users are sensitive to (e.g., "identity", "aspect ratio", "proportions", text accuracy", "color balance", "coherency"). You can also click the word cloud to explore examples.
           </p>
         </div>
         <div style="padding-top: 5px; color: #C7C7C7;">
           <img style="width: 20px; margin-top: -3px;" src="assets/info.svg" />
-          Hover over the word cloud to see examples
+          Select from keyword dropdown or click the word cloud
         </div>
         <br>
-        <div style="max-width:420px; overflow:auto; margin:0 auto;">
-          <iframe id="post-volume-frame" src="assets/community_feedback.html" style="border:none; width:100%; height:420px;">
+        <div style="max-width:1000px; overflow:auto; margin:0 auto;">
+          <iframe id="post-volume-frame" src="assets/community_feedback.html" style="border:none; width:100%;">
           </iframe>
         </div>
       </div>
@@ -331,8 +361,8 @@
         <div class="content has-text-left">
           <p>
             Since the <span class="echo">ECHO</span> framework operates on a large-scale, it can give insight into activity surrounding a model of interest.
-            We plot the posts captured by our framework, after running all steps including relevance and quality filtering.
-            We mark spikes in activity in yellow, including the day after the 4o Image Gen model release (<a href="https://openai.com/index/introducing-4o-image-generation" target="_blank">Mar 26</a>), the day of the o3 model release (<a href="https://openai.com/index/introducing-o3-and-o4-mini" target="_blank">Apr 16</a>), and the day after the 4o Image Gen API release (<a href="https://openai.com/index/image-generation-api" target="_blank">Apr 24</a>).
+            We plot the timestamps of posts, after relevance and quality filtering, bucketed by day.
+            Spikes in activity (highlighted in yellow) often align with real-world events, including: the day after the 4o Image Gen model release (<a href="https://openai.com/index/introducing-4o-image-generation" target="_blank">Mar 26</a>), the day of the o3 model release (<a href="https://openai.com/index/introducing-o3-and-o4-mini" target="_blank">Apr 16</a>), and the day after the 4o Image Gen API release (<a href="https://openai.com/index/image-generation-api" target="_blank">Apr 24</a>).
           </p>
         </div>
         <div style="padding-top: 5px; color: #C7C7C7;">

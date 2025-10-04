@@ -142,3 +142,17 @@ select:focus {
 .back-to-top:hover {
   opacity: 1;
 }
+
+#post-volume-frame {
+  border: none;
+  width: 100%;
+  height: 400px;
+}
+
+@media (max-width: 1000px) {
+  #post-volume-frame { height: 800px; }
+}
+
+@media (min-width: 1000px) {
+  #post-volume-frame { height: 420px; }
+}
