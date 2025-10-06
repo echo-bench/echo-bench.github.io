@@ -3,19 +3,6 @@ function playVideo(id) {
   video.play();
 }
 
-function changeImage(id) {
-  const selectParent = document.getElementById('select-' + id);
-  if (!selectParent) return;
-
-  let path0 = selectParent.getElementsByTagName('select')[0].value;
-
-  const image = document.getElementById(id);
-  const imageSrc = image.src;
-  let imagePath = imageSrc.split("/");
-  imagePath = imagePath.slice(0, -1).join("/") + "/";
-  image.src = imagePath + path0 + ".jpg";
-}
-
 function changePlotly(id) {
   const selectEl = document.querySelector('#select-' + id + ' select');
   if (!selectEl) return;
@@ -137,4 +124,6 @@ async function populateGallery(galleryId = 'gallery') {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => populateGallery());
+document.addEventListener('DOMContentLoaded', () => {
+  populateGallery();
+});

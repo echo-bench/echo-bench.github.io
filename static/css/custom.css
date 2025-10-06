@@ -121,6 +121,7 @@ select:focus {
 .carousel-inner {
   max-width: 80%;
   margin: 0 auto;
+  margin-bottom: 30px;
 }
 
 .carousel-indicators {
@@ -172,6 +173,24 @@ select:focus {
   transition: box-shadow 0.3s ease, transform 0.3s ease;
   font-family: 'Comic Neue', sans-serif;
 }
+
+.prompt-container::-webkit-scrollbar {
+  width: 4px;
+}
+
+.prompt-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.prompt-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.prompt-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
  
 .prompt-column {
   display: flex;
@@ -208,6 +227,7 @@ select:focus {
     transform: rotate(90deg);
   }
 }
+
 @media (min-width: 768px) and (max-width: 1024px) {
   .square-container {
     height: 130px !important;
@@ -216,6 +236,7 @@ select:focus {
     height: 130px !important;
   }
 }
+
 @media (min-width: 1024px) {
   .square-container {
     height: 200px !important;;
@@ -223,4 +244,10 @@ select:focus {
   .prompt-container {
     height: 200px !important;;
   }
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  /* gap: 1rem; */
 }
