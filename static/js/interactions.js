@@ -13,7 +13,7 @@ function changePlotly(id) {
   const oldSrc = iframe.src
   const oldDir = oldSrc.substring(0, oldSrc.lastIndexOf("/") + 1);
   iframe.src = oldDir + selected + ".html";
-  console.log(oldDir, selected)
+  console.log(oldDir, selected);
 }
 
 const galleryData = [
@@ -124,6 +124,36 @@ async function populateGallery(galleryId = 'gallery') {
   }
 }
 
+function addIframePlaceholders() {
+  document.querySelectorAll("iframe").forEach(iframe => {
+    if (iframe.parentElement.querySelector(".iframe-placeholder")) return;
+
+    const placeholder = document.createElement("div");
+    placeholder.className = "iframe-placeholder";
+    placeholder.innerHTML = `
+      <div>Hatching interactive visualization...</div>
+      <div class="emoji-seq">
+        <span class="emoji">🥚</span>
+        <span class="emoji">🐣</span>
+        <span class="emoji">🐥</span>
+      </div>
+    `;
+
+    const parent = iframe.parentElement;
+    if (getComputedStyle(parent).position === "static") {
+      parent.style.position = "relative";
+    }
+
+    parent.appendChild(placeholder);
+
+    iframe.addEventListener("load", () => {
+      placeholder.style.opacity = 0;
+      setTimeout(() => placeholder.remove(), 600);
+    });
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   populateGallery();
+  addIframePlaceholders();
 });
