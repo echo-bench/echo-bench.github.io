@@ -69,15 +69,15 @@ const galleryData = [
   },
 ];
 
-async function populateGallery(galleryId = 'gallery') {
+async function populateGallery() {
   try {
-    const gallery = document.getElementById(galleryId);
+    const gallery = document.getElementById('gallery');
     const indicators = gallery.querySelector('.carousel-indicators');
     const inner = gallery.querySelector('.carousel-inner');
 
     galleryData.forEach((item, idx) => {
       const li = document.createElement('li');
-      li.setAttribute('data-target', `#${galleryId}`);
+      li.setAttribute('data-target', `#gallery`);
       li.setAttribute('data-slide-to', idx);
       if (idx === 0) li.classList.add('active');
       indicators.appendChild(li);
@@ -124,6 +124,119 @@ async function populateGallery(galleryId = 'gallery') {
   }
 }
 
+const modelNameMapping = {
+  'nano_banana': 'Nano Banana',
+  'bagel': 'Bagel',
+  'anole': 'Anole',
+  'flux_kontext': 'Flux Kontext',
+  'bagel_think': 'Bagel-Think',
+  'gemini_2_0_flash': 'Gemini 2.0 Flash',
+  'llm_diffusion': 'LLM+Diffusion',
+  '4o_image_gen': '4o Image Gen'
+};
+
+const modelComparisonData = {
+  color_shift: {
+    prompt: "Transform this everyday object into an imaginary animal by merging its physical characteristics with the animal's anatomy. Keep certain shapes, textures, or mechanical elements of the object visible, naturally integrating them into the creature's design. The animal should look lively, expressive, and slightly cartoonish, with a playful and creative style. Use soft shadows, clean lines, and a vibrant yet harmonious color palette.",
+    models: ['nano_banana', 'bagel', 'anole', 'flux_kontext', 'bagel_think', 'gemini_2_0_flash', 'llm_diffusion', '4o_image_gen'],
+    input: true,
+  },
+  face_identity: {
+    prompt: "Billy the Kid cleaned up and colorized from the famous photo of him",
+    models: ['nano_banana', 'flux_kontext', 'bagel_think', 'gemini_2_0_flash', 'bagel', 'anole', '4o_image_gen', 'llm_diffusion'],
+    input: true,
+  },
+  structure_distance: {
+    prompt: "giving it a fresh twist with a more detailed, realistic touch",
+    models: ['flux_kontext', 'bagel_think', 'bagel', '4o_image_gen', 'llm_diffusion', 'gemini_2_0_flash', 'nano_banana', 'anole'],
+    input: true,
+  },
+  text_rendering: {
+    prompt: "Create an infographic explaining Newton's prism experiment in great detail. The background should be pure white, and include neatly rendered text labels with step-by-step annotations. Each step should be numbered and connected with subtle gradient arrows, and include both the theoretical explanation and practical observations.",
+    models: ['4o_image_gen', 'nano_banana', 'gemini_2_0_flash', 'llm_diffusion', 'flux_kontext', 'bagel_think', 'bagel', 'anole'],
+    input: false,
+  },
+};
+
+async function populateModelComparison() {
+  try {
+    const container = document.getElementById('specialized-comparison-grid');
+    if (!container) return;
+
+    const selectEl = document.querySelector('#select-specialized select');
+    if (!selectEl) return;
+    metric = selectEl.value;
+
+    const chartImg = document.querySelector('#specialized-chart');
+    if (chartImg) {
+      chartImg.src = `assets/specialized_metrics/${metric}.jpg`;
+    }
+
+    const metricData = modelComparisonData[metric];
+    const { models, prompt, input } = metricData;
+    const basePath = `assets/specialized_metrics/${metric}/`;
+
+    container.innerHTML = '';
+    const inputPath = input ? `${basePath}input.png` : null;
+
+    const inputSection = inputPath ? `
+      <div>
+        <div class="square-container">
+          <img src="${inputPath}" alt="Input Image">
+        </div>
+        <p class="label-container">Input Image</p>
+      </div>
+    ` : '';
+
+    const topRow = document.createElement('div');
+    topRow.innerHTML = `
+      <div style="margin-bottom: 10px;">
+        <div style="margin: 20px 0;">
+          <div class="header-line"></div>
+          <p>Example Model Comparison</p>
+        </div>
+        <div class="grid-container" style="align-items: stretch; justify-content: center;">
+          <div class="prompt-column" style="width: ${inputPath ? '' : '100%'};">
+            <div class="prompt-container">
+              <p class="content">${prompt}</p>
+            </div>
+            <p class="label-container">Prompt</p>
+          </div>
+          ${inputSection}
+          <div style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <svg class="arrow-container" xmlns="http://www.w3.org/2000/svg" viewBox="10 0 25 30" width="25" height="30">
+              <polygon points="10,10 20,10 20,5 35,15 20,25 20,20 10,20" fill="black"/>
+            </svg>
+          </div>
+        </div>
+      </div>`;
+
+    const outputsWrapper = document.createElement('div');
+    outputsWrapper.classList.add('model-comparison-grid');
+
+    let innerHTML = '<div class="grid-container">';
+    models.forEach(model => {
+      const label = modelNameMapping[model];
+      const path = `${basePath}${model}.png`;
+      innerHTML += `
+        <div class="grid-item">
+          <div class="square-container">
+            <img src="${path}" alt="${label}" 
+                 onerror="this.parentElement.innerHTML='<div class=&quot;square-container placeholder&quot;></div>'">
+          </div>
+          <div class="grid-item-label">${label}</div>
+        </div>`;
+    });
+    innerHTML += '</div>';
+    outputsWrapper.innerHTML = innerHTML;
+    
+    container.appendChild(topRow);
+    container.appendChild(outputsWrapper);
+  } catch (err) {
+    console.error('Error populating model comparison grid:', err);
+  }
+}
+
 function addIframePlaceholders() {
   document.querySelectorAll("iframe").forEach(iframe => {
     if (iframe.parentElement.querySelector(".iframe-placeholder")) return;
@@ -155,5 +268,6 @@ function addIframePlaceholders() {
 
 document.addEventListener('DOMContentLoaded', () => {
   populateGallery();
+  populateModelComparison();
   addIframePlaceholders();
 });

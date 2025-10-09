@@ -70,20 +70,23 @@
               <a href="https://jiaxin.ge" target="_blank">Jiaxin Ge</a><sup>*</sup>
             </span>
             <span class="author-block">
-              <a href="https://people.eecs.berkeley.edu/~graceluo" target="_blank">Grace Luo</a><sup>*</sup>
+              <a href="https://graceluo.net" target="_blank">Grace Luo</a><sup>*</sup>
             </span>
             <br>
             <span class="author-block">
-              Heekyung Lee
+              <a href="https://kyunnilee.github.io" target="_blank">
+              Heekyung Lee</a>
             </span>
             <span class="author-block">
               Nishant Malpani
             </span>
             <span class="author-block">
-              Long Lian
+              <a href="https://tonylian.com" target="_blank">
+              Long Lian</a>
             </span>
             <span class="author-block">
-              XuDong Wang
+              <a href="https://people.eecs.berkeley.edu/~xdwang" target="_blank">
+              XuDong Wang</a>
             </span>
             <br>
             <span class="author-block">
@@ -117,7 +120,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="" target="_blank" class="external-link button is-normal is-dark" style="box-shadow: 3px 3px 0px black;">
+                <a href="https://huggingface.co/datasets/echo-bench/echo-bench" target="_blank" class="external-link button is-normal is-dark" style="box-shadow: 3px 3px 0px black;">
                   <span class="icon">
                       <i class="fa fa-database"></i>
                   </span>
@@ -125,7 +128,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="" target="_blank" class="external-link button is-normal is-dark" style="box-shadow: 3px 3px 0px black;">
+                <a href="https://github.com/para-lost/ECHO" target="_blank" class="external-link button is-normal is-dark" style="box-shadow: 3px 3px 0px black;">
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
@@ -363,7 +366,7 @@
         <div id="select-specialized" class="select-row">
           <span>
             Metric:
-            <select onchange="changePlotly('specialized')">
+            <select onchange="populateModelComparison()">
               <option value="color_shift">Color Shift Magnitude</option>
               <option value="face_identity">Face Identity Similarity</option>
               <option value="structure_distance">Structure Distance</option>
@@ -375,10 +378,8 @@
           <img style="width: 20px; margin-top: -3px;" src="assets/info.svg" />
           Select from the dropdown and toggle the slider
         </div>
-        <div style="max-width:710px; overflow:auto; margin:0 auto;">
-          <iframe id="specialized-frame" src="assets/specialized_metrics/color_shift.html" style="border:none; width:100%; height:480px;">
-          </iframe>
-        </div>
+        <div style="max-width: 400px; margin: 0 auto;"><img id="specialized-chart" src="assets/specialized_metrics/color_shift.jpg"/></div>
+        <div id="specialized-comparison-grid"></div>
       </div>
     </div>
   </div>
@@ -425,6 +426,12 @@
           We also thank the folks at Stochastic Labs for previewing early prototypes of this work. Finally, we extend a special thank you to Lisa Dunlap for entertaining many extensive discussions on evaluations.
         </p>
         <br>
+        <h2 class="title is-4 section-header plain-header">About This Website</h2>
+        <p>
+          <a href="https://graceluo.net" target="_blank">Grace</a> really enjoys web design, so here's a short epilogue discussing all the bells and whistles.
+          It turns out, it's possible to make the <a href="https://nerfies.github.io">Nerfies</a> template feel more "bloggy" simply by aligning text to the left instead of center, then moving paragraphs before figures instead of after. We then used <a href="https://plotly.com/python" target="_blank">Plotly</a> for all the interactive visualizations. Final touches include: a loading screen for the visualizations, a "back to top" button anchored on the bottom right, and a lot of breakpoint magic for mobile viewing. Enjoy!
+        </p>
+        <br>
         <h2 class="title is-4 section-header plain-header">BibTeX</h2>
 <pre><code>@article{ge2025echo,
   title={Constantly Improving Image Models Need Constantly Improving Benchmarks},
@@ -445,7 +452,7 @@
       <div class="column is-8">
         <div class="content">
           <p>
-            The website is modified from the <a href="https://dual-process.github.io">Dual-Process Image Generation</a> project page, which is based on <a href="https://nerfies.github.io">Nerfies</a>. We adapted it taking inspiration from <a href="https://flowreinforce.github.io">FPO</a>, which is spiritually similar to the <a href="https://distill.pub/guide"> Distill Template</a>. This website was designed by <a href="https://graceluo.net">Grace Luo</a> with feedback from the ECHO team.
+            The website is modified from the <a href="https://dual-process.github.io">Dual-Process Image Generation</a> project page, which is based on <a href="https://nerfies.github.io">Nerfies</a>. We adapted it taking inspiration from <a href="https://flowreinforce.github.io">FPO</a>, which is spiritually similar to the <a href="https://distill.pub/guide"> Distill Template</a>. Feel free to use this website's <a href="https://github.com/echo-bench/echo-bench.github.io">source code</a> as a template and <a href="https://echo-bench.github.io">cite our project</a>!
           </p>
         </div>
       </div>
