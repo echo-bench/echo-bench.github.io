@@ -148,7 +148,7 @@ const modelComparisonData = {
   },
   structure_distance: {
     prompt: "giving it a fresh twist with a more detailed, realistic touch",
-    models: ['flux_kontext', 'bagel_think', 'bagel', '4o_image_gen', 'llm_diffusion', 'gemini_2_0_flash', 'nano_banana', 'anole'],
+    models: ['nano_banana', 'bagel', 'bagel_think', 'flux_kontext', '4o_image_gen', 'gemini_2_0_flash', 'llm_diffusion', 'anole'],
     input: true,
   },
   text_rendering: {
