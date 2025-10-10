@@ -155,7 +155,7 @@
             <li><a href="#method">Method</a></li>
             <li><a href="#dataset-comparison">Dataset Comparison</a></li>
             <li><a href="#community-feedback">Community Feedback</a></li>
-            <li><a href="#overall-evaluation">Overall Evaluation</a></li>
+            <li><a href="#overall-evaluation">How Do Models Compare?</a></li>
             <li><a href="#specialized-metrics">Specialized Metrics</a></li>
             <li><a href="#post-volume">Post Volume</a></li>
           </ul>
@@ -187,7 +187,7 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-four-fifths">
-        <h2 id="method" class="title is-3 section-header">Gallery</h2>
+        <h2 class="title is-3 section-header">Explore the Dataset</h2>
         <div class="header-line"></div> 
         <div class="content has-text-left">
           <p>
@@ -224,9 +224,9 @@
         <div class="content has-text-left">
           <p>
             To collect these examples, we develop a framework called <span class="echo">ECHO</span>: <u>E</u>xtracting <u>C</u>ommunity <u>H</u>atched <u>O</u>bservations. We design this framework to address a number of challenges inherent to social media.<br><br>
-            <b>1. Large-scale collection is bottlenecked by a volume-relevance tradeoff.</b> When querying with broader keywords, the average post relevance goes down, and with narrower ones, the available post pool is quickly exhausted. We therefore implement a two-stage pipeline, where we first query for a large volume of posts then use an LLM to filter irrelevant ones.<br>
-            <b>2. Posts can be context dependent.</b> For example, a user <a href="https://x.com/Cliffinkent/status/1928017830538080303" target="_blank">may write "prompt below" in the first post</a> then include the actual prompt text in a reply. To extract self-contained prompts, our framework attempts to collect as much of the reply tree as possible, then use this full context when processing posts into samples.<br>
-            <b>3. Useful data exists in non-standard formats.</b> The output image could be the <a href="https://x.com/Ror_Fly/status/1906362188429705598" target="_blank">first</a> or the <a href="https://x.com/sanchoyai/status/1923655623239139422" target="_blank">last</a> in a series of images, the prompt may be written in an <a href="https://x.com/umesh_ai/status/1923628366717997323" target="_blank">incomplete fill-in-the-blank format</a>, or data may be <a href="https://x.com/AdamBartas/status/1906753444905623682" target="_blank">embedded in a screenshot</a>. We process these cases with a VLM, which is responsible for classifying input vs. output images, filling in blanks, or parsing screenshots.<br>
+            <b>1. Large-scale collection is bottlenecked by a volume-relevance tradeoff.</b> When querying with broader keywords, the average post relevance goes down, and with narrower ones, the available post pool is quickly exhausted. We therefore implement a two-stage pipeline, where we first query for a large volume of posts then use an LLM to filter irrelevant ones.<br><br>
+            <b>2. Posts can be context dependent.</b> For example, a user <a href="https://x.com/Cliffinkent/status/1928017830538080303" target="_blank">may write "prompt below" in the first post</a> then include the actual prompt text in a reply. To extract self-contained prompts, our framework attempts to collect as much of the reply tree as possible, then use this full context when processing posts into samples.<br><br>
+            <b>3. Useful data exists in non-standard formats.</b> The output image could be the <a href="https://x.com/Ror_Fly/status/1906362188429705598" target="_blank">first</a> or the <a href="https://x.com/sanchoyai/status/1923655623239139422" target="_blank">last</a> in a series of images, the prompt may be written in an <a href="https://x.com/umesh_ai/status/1923628366717997323" target="_blank">incomplete fill-in-the-blank format</a>, or data may be <a href="https://x.com/AdamBartas/status/1906753444905623682" target="_blank">embedded in a screenshot</a>. We process these cases with a VLM, which is responsible for classifying input vs. output images, filling in blanks, or parsing screenshots.<br><br>
             <b>4. Data quality varies widely.</b> A user may provide <a href="https://x.com/freepik/status/1919780241943494704" target="_blank">more general commentary</a> or <a href="https://x.com/aziz4ai/status/1923980161713639692" target="_blank">exactly document their input prompt</a>. We separate prompts into two groups: moderate-quality ones suited for analysis, and high-quality ones appropriate for benchmarking.
             <br>
           </p>
@@ -322,7 +322,7 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-four-fifths">
-        <h2 id="overall-evaluation" class="title is-3 section-header">Overall Evaluation</h2>
+        <h2 id="overall-evaluation" class="title is-3 section-header">How Do Models Compare?</h2>
         <div class="header-line"></div> 
         <div style="display: flex; justify-content: center;">
           <img id="" src="" style="max-width: 70%;">
