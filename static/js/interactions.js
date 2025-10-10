@@ -137,7 +137,7 @@ const modelNameMapping = {
 
 const modelComparisonData = {
   color_shift: {
-    prompt: "Transform this everyday object into an imaginary animal by merging its physical characteristics with the animal's anatomy. Keep certain shapes, textures, or mechanical elements of the object visible, naturally integrating them into the creature's design. The animal should look lively, expressive, and slightly cartoonish, with a playful and creative style. Use soft shadows, clean lines, and a vibrant yet harmonious color palette.",
+    prompt: "ghiblify this drawing",
     models: ['nano_banana', 'bagel', 'anole', 'flux_kontext', 'bagel_think', 'gemini_2_0_flash', 'llm_diffusion', '4o_image_gen'],
     input: true,
   },
@@ -196,7 +196,7 @@ async function populateModelComparison() {
           <p>Example Model Comparison</p>
         </div>
         <div class="grid-container" style="align-items: stretch; justify-content: center;">
-          <div class="prompt-column" style="width: ${inputPath ? '' : '100%'};">
+          <div class="prompt-column" style="flex-grow: 1; width: ${inputPath ? '' : '100%'};">
             <div class="prompt-container">
               <p class="content">${prompt}</p>
             </div>
