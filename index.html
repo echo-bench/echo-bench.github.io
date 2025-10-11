@@ -215,7 +215,7 @@
 <!-- Gallery -->
 
 <!-- Method -->
-<section class="section">
+<!-- <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-four-fifths">
@@ -274,6 +274,125 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
           </a>
+        </div>
+      </div>  
+    </div>
+  </div>
+</section> -->
+<!-- Method -->
+
+<!-- Method -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 id="method" class="title is-3 section-header">Method</h2>
+        <div class="header-line"></div> 
+        <div class="content has-text-left">
+          <p>
+            To collect these examples, we develop a framework called <span class="echo">ECHO</span>: 
+            <u>E</u>xtracting <u>C</u>ommunity <u>H</u>atched <u>O</u>bservations. 
+            We design this framework to address a number of challenges inherent to social media.
+            Click through the tabs below to learn more about each step.
+          </p>
+        </div>
+        <ul class="nav nav-tabs" id="methodTabs" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="tab-collect" data-toggle="tab" href="#collect" role="tab" aria-controls="collect" aria-selected="true">1. Collect</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="tab-context" data-toggle="tab" href="#context" role="tab" aria-controls="context" aria-selected="false">2. Reconstruct</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="tab-process" data-toggle="tab" href="#process" role="tab" aria-controls="process" aria-selected="false">3. Process</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="tab-finalize" data-toggle="tab" href="#finalize" role="tab" aria-controls="finalize" aria-selected="false">4. Finalize</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="method-gallery" style="margin-top: 1.5rem;">
+          <div class="tab-pane fade show active" id="collect" role="tabpanel" aria-labelledby="tab-collect">
+            <div class="content has-text-left gallery-box">
+              <h2 class="title is-5">Collect large volume of relevant posts</h2>
+              <p>
+                Large-scale collection is bottlenecked by a volume-relevance tradeoff. 
+                When querying with broader keywords, the average post relevance goes down, 
+                and with narrower ones, the available post pool is quickly exhausted. 
+                We therefore implement a two-stage pipeline, where we first query for a large volume of posts 
+                then use an LLM to filter irrelevant ones.
+              </p>
+              <img style="max-width: 450px;" src="assets/approach_1.jpg" class="gallery-image">
+            </div>
+          </div>
+          <div class="tab-pane fade" id="context" role="tabpanel" aria-labelledby="tab-context">
+            <div class="content has-text-left gallery-box">
+              <h2 class="title is-5">Reconstruct context with post trees</h2>
+              <p>
+                Posts can be context dependent. For example, a user 
+                <a href="https://x.com/Cliffinkent/status/1928017830538080303" target="_blank">may write "prompt below" in the first post</a> 
+                then include the actual prompt text in a reply. 
+                To extract self-contained prompts, our framework attempts to collect as much of the reply tree as possible, 
+                then use this full context when processing posts into samples.
+              </p>
+              <img style="max-width: 450px;" src="assets/approach_2.jpg" class="gallery-image">
+            </div>
+          </div>
+          <div class="tab-pane fade" id="process" role="tabpanel" aria-labelledby="tab-process">
+            <div class="content has-text-left gallery-box">
+              <h2 class="title is-5">Process multimodal data in non-standard formats</h2>
+              <p>
+                Useful data exists in non-standard formats. The output image could be the 
+                <a href="https://x.com/Ror_Fly/status/1906362188429705598" target="_blank">first</a> 
+                or the <a href="https://x.com/sanchoyai/status/1923655623239139422" target="_blank">last</a> in a series of images, 
+                the prompt may be written in an 
+                <a href="https://x.com/umesh_ai/status/1923628366717997323" target="_blank">incomplete fill-in-the-blank format</a>, 
+                or data may be 
+                <a href="https://x.com/AdamBartas/status/1906753444905623682" target="_blank">embedded in a screenshot</a>. 
+                We process these cases with a VLM, which is responsible for classifying input vs. output images, 
+                filling in blanks, or parsing screenshots.
+              </p>
+              <!-- <div class="sticky-scroll" style="max-width: 450px; height: 150px; overflow-y: auto; margin: 0 auto;">
+                <img src="assets/approach_3.jpg" class="gallery-image">
+              </div> -->
+              <div class="tabs is-centered">
+                <ul id="imageTabs" class="nav nav-tabs" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link active" id="tab-a" data-toggle="tab" href="#img-a" role="tab">(a) Classify Input-Output</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="tab-b" data-toggle="tab" href="#img-b" role="tab">(b) Fill-in-the-Blank</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="tab-c" data-toggle="tab" href="#img-c" role="tab">(c) Conversation Screenshot</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="tab-content" style="max-width: 350px; margin: 0 auto;">
+                <div class="tab-pane fade show active" id="img-a" role="tabpanel">
+                  <img src="assets/approach_3_a.jpg" class="gallery-image">
+                </div>
+                <div class="tab-pane fade" id="img-b" role="tabpanel">
+                  <img src="assets/approach_3_b.jpg" class="gallery-image">
+                </div>
+                <div class="tab-pane fade" id="img-c" role="tabpanel">
+                  <img src="assets/approach_3_c.jpg" class="gallery-image">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="finalize" role="tabpanel" aria-labelledby="tab-finalize">
+            <div class="content has-text-left gallery-box">
+              <h2 class="title is-5">Finalize samples</h2>
+              <p>
+                Data quality varies widely. A user may provide 
+                <a href="https://x.com/freepik/status/1919780241943494704" target="_blank">more general commentary</a> 
+                or <a href="https://x.com/aziz4ai/status/1923980161713639692" target="_blank">exactly document their input prompt</a>. 
+                We separate prompts into two groups: moderate-quality ones suited for analysis, 
+                and high-quality ones appropriate for benchmarking.
+              </p>
+              <img style="max-width: 400px;" src="assets/approach_4.jpg" class="gallery-image">
+            </div>
+          </div>
         </div>
       </div>  
     </div>

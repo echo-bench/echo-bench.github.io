@@ -228,26 +228,26 @@ select:focus {
   }
 }
 
-#method-gallery .carousel-inner {
-  max-width: 100%;
-  margin: 0 auto;
-  margin-bottom: 30px;
-}
-
 #method-gallery .gallery-image {
   display: block;
   width: 100%;
   margin: 0 auto;
 }
 
+#method-gallery .gallery-box {
+  max-width: 100%;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
 @media (max-width: 768px) {
-  #method-gallery .carousel-inner {
-    height: 400px;
+  #method-gallery .gallery-box {
+    height: 450px;
   }
 }
 
 @media (min-width: 768px) {
-  #method-gallery .carousel-inner {
+  #method-gallery .gallery-box {
     height: 350px;
   }
 }
