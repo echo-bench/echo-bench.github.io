@@ -118,12 +118,6 @@ select:focus {
   filter: invert(1) grayscale(100%) brightness(200%);
 }
 
-.carousel-inner {
-  max-width: 80%;
-  margin: 0 auto;
-  margin-bottom: 30px;
-}
-
 .carousel-indicators {
   position: relative;
   bottom: auto;
@@ -173,24 +167,6 @@ select:focus {
   transition: box-shadow 0.3s ease, transform 0.3s ease;
   font-family: 'Comic Neue', sans-serif;
 }
-
-.prompt-container::-webkit-scrollbar {
-  width: 4px;
-}
-
-.prompt-container::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 4px;
-}
-
-.prompt-container::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 4px;
-}
-
-.prompt-container::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
  
 .prompt-column {
   display: flex;
@@ -207,6 +183,12 @@ select:focus {
   margin-top: 0.1rem;
   font-size: 0.9rem;
   text-align: center;
+}
+
+#gallery .carousel-inner {
+  max-width: 80%;
+  margin: 0 auto;
+  margin-bottom: 30px;
 }
 
 @media (max-width: 768px) {
@@ -246,6 +228,30 @@ select:focus {
   }
 }
 
+#method-gallery .carousel-inner {
+  max-width: 100%;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+#method-gallery .gallery-image {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  #method-gallery .carousel-inner {
+    height: 400px;
+  }
+}
+
+@media (min-width: 768px) {
+  #method-gallery .carousel-inner {
+    height: 350px;
+  }
+}
+
 #specialized-comparison-grid .model-comparison-grid {
   flex: 1 1 auto;
   overflow-x: scroll;
@@ -264,21 +270,28 @@ select:focus {
   overflow-y: auto;
 }
 
-#specialized-comparison-grid .model-comparison-grid::-webkit-scrollbar {
-  height: 4px;
+.sticky-scroll {
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+  -webkit-overflow-scrolling: touch;
 }
 
-#specialized-comparison-grid .model-comparison-grid::-webkit-scrollbar-track {
+.sticky-scroll::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.sticky-scroll::-webkit-scrollbar-track {
   background: #f1f1f1;
   border-radius: 4px;
 }
 
-#specialized-comparison-grid .model-comparison-grid::-webkit-scrollbar-thumb {
+.sticky-scroll::-webkit-scrollbar-thumb {
   background: #888;
   border-radius: 4px;
 }
 
-#specialized-comparison-grid .model-comparison-grid::-webkit-scrollbar-thumb:hover {
+.sticky-scroll::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
 

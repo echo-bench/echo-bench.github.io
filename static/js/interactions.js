@@ -98,7 +98,7 @@ async function populateGallery() {
       div.innerHTML = `
         <div class="columns is-vcentered is-variable is-2" style="align-items: stretch;">
           <div class="column prompt-column ${item.input ? '' : 'is-three-fifths'}">
-            <div class="prompt-container ${item.input ? '' : 'prompt-container-no-input'}">
+            <div class="sticky-scroll prompt-container ${item.input ? '' : 'prompt-container-no-input'}">
               <p class="content">${item.prompt}</p>
             </div>
             <p class="label-container">Prompt</p>
@@ -212,7 +212,7 @@ async function populateModelComparison() {
       </div>`;
 
     const outputsWrapper = document.createElement('div');
-    outputsWrapper.classList.add('model-comparison-grid');
+    outputsWrapper.classList.add('model-comparison-grid', 'sticky-scroll');
 
     let innerHTML = '<div class="grid-container">';
     models.forEach(model => {
