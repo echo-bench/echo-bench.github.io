@@ -215,73 +215,6 @@
 <!-- Gallery -->
 
 <!-- Method -->
-<!-- <section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-four-fifths">
-        <h2 id="method" class="title is-3 section-header">Method</h2>
-        <div class="header-line"></div> 
-        <div class="content has-text-left">
-          <p>
-            To collect these examples, we develop a framework called <span class="echo">ECHO</span>: <u>E</u>xtracting <u>C</u>ommunity <u>H</u>atched <u>O</u>bservations. We design this framework to address a number of challenges inherent to social media.
-            Click through the carousel below to learn more about each step.
-          </p>
-        </div>
-        <div id="method-gallery" class="carousel slide" data-ride="carousel" data-interval="10000">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="content has-text-left gallery-box">
-                <h2 class="title is-5">1. Collect large volume of relevant posts</h2>
-                <p>Large-scale collection is bottlenecked by a volume-relevance tradeoff. When querying with broader keywords, the average post relevance goes down, and with narrower ones, the available post pool is quickly exhausted. We therefore implement a two-stage pipeline, where we first query for a large volume of posts then use an LLM to filter irrelevant ones.</p>
-                <img style="max-width: 450px;" src="assets/approach_1.jpg" class="gallery-image">
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="content has-text-left gallery-box">
-                <h2 class="title is-5">2. Reconstruct context with post trees</h2>
-                <p>Posts can be context dependent. For example, a user <a href="https://x.com/Cliffinkent/status/1928017830538080303" target="_blank">may write "prompt below" in the first post</a> then include the actual prompt text in a reply. To extract self-contained prompts, our framework attempts to collect as much of the reply tree as possible, then use this full context when processing posts into samples.</p>
-                <img style="max-width: 450px;" src="assets/approach_2.jpg" class="gallery-image">
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="content has-text-left gallery-box">
-                <h2 class="title is-5">3. Process multimodal data in non-standard formats</h2>
-                <p>Useful data exists in non-standard formats. The output image could be the <a href="https://x.com/Ror_Fly/status/1906362188429705598" target="_blank">first</a> or the <a href="https://x.com/sanchoyai/status/1923655623239139422" target="_blank">last</a> in a series of images, the prompt may be written in an <a href="https://x.com/umesh_ai/status/1923628366717997323" target="_blank">incomplete fill-in-the-blank format</a>, or data may be <a href="https://x.com/AdamBartas/status/1906753444905623682" target="_blank">embedded in a screenshot</a>. We process these cases with a VLM, which is responsible for classifying input vs. output images, filling in blanks, or parsing screenshots.</p>
-                <div class="sticky-scroll" style="max-width: 450px; height: 150px; overflow-y: auto; margin: 0 auto;">
-                  <img src="assets/approach_3.jpg" class="gallery-image">
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="content has-text-left gallery-box">
-                <h2 class="title is-5">4. Finalize samples</h2>
-                <p> Data quality varies widely. A user may provide <a href="https://x.com/freepik/status/1919780241943494704" target="_blank">more general commentary</a> or <a href="https://x.com/aziz4ai/status/1923980161713639692" target="_blank">exactly document their input prompt</a>. We separate prompts into two groups: moderate-quality ones suited for analysis, and high-quality ones appropriate for benchmarking.</p>
-                <img style="max-width: 400px;" src="assets/approach_4.jpg" class="gallery-image">
-              </div>
-            </div>
-          </div>
-          <ol class="carousel-indicators">
-            <li data-target="#method-gallery" data-slide-to="0" class="active"></li>
-            <li data-target="#method-gallery" data-slide-to="1"></li>
-            <li data-target="#method-gallery" data-slide-to="2"></li>
-            <li data-target="#method-gallery" data-slide-to="3"></li>
-          </ol>
-          <a class="carousel-control-prev" href="#method-gallery" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#method-gallery" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-      </div>  
-    </div>
-  </div>
-</section> -->
-<!-- Method -->
-
-<!-- Method -->
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
@@ -351,9 +284,6 @@
                 We process these cases with a VLM, which is responsible for classifying input vs. output images, 
                 filling in blanks, or parsing screenshots.
               </p>
-              <!-- <div class="sticky-scroll" style="max-width: 450px; height: 150px; overflow-y: auto; margin: 0 auto;">
-                <img src="assets/approach_3.jpg" class="gallery-image">
-              </div> -->
               <div class="tabs is-centered">
                 <ul id="imageTabs" class="nav nav-tabs" role="tablist">
                   <li class="nav-item">
