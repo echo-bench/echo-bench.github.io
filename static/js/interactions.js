@@ -97,13 +97,15 @@ async function populateGallery() {
 
       div.innerHTML = `
         <div class="columns is-vcentered is-variable is-2" style="align-items: stretch;">
-          <div class="column prompt-column ${item.input ? '' : 'is-three-fifths'}">
-            <div class="sticky-scroll prompt-container ${item.input ? '' : 'prompt-container-no-input'}">
-              <p class="content">${item.prompt}</p>
+          <div class="input-row">
+            <div class="column prompt-column ${item.input ? '' : 'is-three-fifths'}">
+              <div class="sticky-scroll prompt-container ${item.input ? '' : 'prompt-container-no-input'}">
+                <p class="content">${item.prompt}</p>
+              </div>
+              <p class="label-container">Prompt</p>
             </div>
-            <p class="label-container">Prompt</p>
+            ${inputSection}
           </div>
-          ${inputSection}
           <div class="arrow-container" style="display: flex; align-items: center; justify-content: center;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="10 0 25 30" width="25" height="30">
               <polygon points="10,10 20,10 20,5 35,15 20,25 20,20 10,20" fill="black"/>
@@ -196,7 +198,7 @@ async function populateModelComparison() {
           <p>Example Model Comparison</p>
         </div>
         <div class="grid-container" style="align-items: stretch; justify-content: center;">
-          <div class="prompt-column" style="flex-grow: 1; width: ${inputPath ? '' : '100%'};">
+          <div class="prompt-column" style="flex-grow: 1; width: ${inputPath ? '' : '100%'}; max-width: ${inputPath ? '150px' : ''};">
             <div class="prompt-container">
               <p class="content">${prompt}</p>
             </div>

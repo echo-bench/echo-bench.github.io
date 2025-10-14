@@ -157,9 +157,9 @@ select:focus {
   max-height: 100%;
   margin: 0 auto;
   background-color: white;
-  display: flex;
   align-items: flex-start;
-  justify-content: center;
+  /* display: flex; */
+  /* justify-content: center; */
   padding: 10px;
   overflow-y: auto;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -192,21 +192,39 @@ select:focus {
 }
 
 @media (max-width: 768px) {
-  #gallery .square-container {
-    max-width: 150px;
+  #gallery .input-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    gap: 0;
   }
+  #gallery .input-row > .column {
+    flex: 0 1 auto !important;
+    padding: 10 !important;
+    margin: 0 !important;
+    min-width: 0 !important;
+  }
+  #gallery .square-container,
   #gallery .prompt-container {
     max-width: 150px;
-    height: 150px !important;
+    flex: 1 1 0;
+    flex-shrink: 0;
   }
   #gallery .prompt-container-no-input {
-    height: 350px !important;
+    min-height: min(150px, 30vw);
   }
   #gallery .carousel-inner {
-    height: 600px;
+    height: 400px;
   }
   #gallery .arrow-container svg {
-    transform: rotate(90deg);
+    transform: rotate(90deg) scale(0.8);
+  }
+}
+
+@media (min-width: 768px) {
+  #gallery .input-row {
+    display: contents;
   }
 }
 
@@ -221,10 +239,10 @@ select:focus {
 
 @media (min-width: 1024px) {
   .square-container {
-    height: 200px !important;;
+    height: 200px !important;
   }
   .prompt-container {
-    height: 200px !important;;
+    height: 200px !important;
   }
 }
 
@@ -267,6 +285,7 @@ select:focus {
 
 #specialized-comparison-grid .prompt-container {
   height: 150px !important;
+  max-width: 150px !important;
   overflow-y: auto;
 }
 
