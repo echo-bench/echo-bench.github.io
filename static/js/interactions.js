@@ -198,7 +198,7 @@ async function populateModelComparison() {
           <p>Example Model Comparison</p>
         </div>
         <div class="grid-container" style="align-items: stretch; justify-content: center;">
-          <div class="prompt-column" style="flex-grow: 1; width: ${inputPath ? '' : '100%'}; max-width: ${inputPath ? '150px' : ''};">
+          <div class="prompt-column" style="flex-grow: 1; ${inputPath ? '' : 'width: 100%'}; ${inputPath ? 'max-width: 150px' : ''};">
             <div class="prompt-container">
               <p class="content">${prompt}</p>
             </div>

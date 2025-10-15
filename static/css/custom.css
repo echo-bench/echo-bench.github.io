@@ -229,19 +229,19 @@ select:focus {
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-  .square-container {
+  #gallery .square-container {
     height: 130px !important;
   }
-  .prompt-container {
+  #gallery .prompt-container {
     height: 130px !important;
   }
 }
 
 @media (min-width: 1024px) {
-  .square-container {
+  #gallery .square-container {
     height: 200px !important;
   }
-  .prompt-container {
+  #gallery .prompt-container {
     height: 200px !important;
   }
 }
@@ -285,7 +285,6 @@ select:focus {
 
 #specialized-comparison-grid .prompt-container {
   height: 150px !important;
-  max-width: 150px !important;
   overflow-y: auto;
 }
 
